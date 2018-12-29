@@ -1,0 +1,39 @@
+<?php
+
+use Illuminate\Support\Facades\Schema;
+use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Database\Migrations\Migration;
+
+class CreateBehaviorLogTable extends Migration
+{
+    /**
+     * Run the migrations.
+     */
+    public function up()
+    {
+        Schema::create(config('unibehavior.table_name'), function (Blueprint $table) {
+            $table->increments('id');
+            $table->integer('causer_id')->nullable();
+            $table->string('causer_type')->nullable();
+            $table->string('behavior')->nullable();
+            $table->text('description');
+            $table->unsignedBigInteger('ip')->nullable();
+            $table->string('route')->nullable();
+            $table->string('city')->nullable();
+            $table->string('country')->nullable();
+            $table->string('device')->nullable();
+            $table->text('user_agent')->nullable();
+            $table->timestamps();
+
+            $table->index('behavior');
+        });
+    }
+
+    /**
+     * Reverse the migrations.
+     */
+    public function down()
+    {
+        Schema::dropIfExists(config('unibehavior.table_name'));
+    }
+}

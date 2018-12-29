@@ -1,0 +1,32 @@
+{
+    "name": "reallyli/laravel-unibehavior",
+    "description": "Record user behavior",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "reallyli",
+            "email": "zlisreallyli@outlook.com"
+        }
+    ],
+    "require": {
+        "php" : "^7.1",
+        "illuminate/config": "^5.5",
+        "illuminate/database": "^5.5",
+        "illuminate/support": "^5.5",
+        "illuminate/http": "^5.5",
+        "jenssegers/agent": "^2.6",
+        "torann/geoip": "^1.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "Reallyli\\LaravelUnibehavior\\": "src"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Reallyli\\LaravelUnibehavior\\UnibehaviorServiceProvider"
+            ]
+        }
+    }
+}
